@@ -1,10 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Dashboard.css';
+import { fetchCat, deleteCat } from '../../actions/cats';
+import { fetchDog, deleteDog } from '../../actions/dogs';
+import { connect } from 'react-redux';
 
-export default class Dashboard extends Component {
+class Dashboard extends React.Component {
+  componentDidMount() {
+    this.props.dispatch(fetchCat());
+    this.props.dispatch(fetchDog());
+  }
   render() {
+    console.log(this.props.cat);
+
     return (
-      <div className = "body">
+      <div className="body">
         <div className="navBar">
           <h2 className="navBarTitle">Welcome to our site!</h2>
         </div>
@@ -20,8 +29,8 @@ export default class Dashboard extends Component {
           <tbody>
             <tr>
               {
-                this.state.array.map(function(i){
-                  return(
+                [1].map(function (i) {
+                  return (
                     <div>
                       <td className="petImage">
                         <img className="image" src="https://img.buzzfeed.com/buzzfeed-static/static/2015-04/23/17/enhanced/webdr15/enhanced-6210-1429824367-3.jpg?downsize=700:*&output-format=auto&output-quality=auto"></img>
@@ -36,7 +45,7 @@ export default class Dashboard extends Component {
                       </td>
                       <td className="petDescription">
                       </td>
-                  </div>
+                    </div>
                   )
                 })
               }
@@ -47,3 +56,10 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  cat: state.cat.data,
+  dog: state.dog.data
+})
+
+export default connect(mapStateToProps)(Dashboard);

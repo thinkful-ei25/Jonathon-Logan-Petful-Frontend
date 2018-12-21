@@ -19,6 +19,7 @@ export const fetchCatError = (error) => ({
 });
 
 export const fetchCat = () => dispatch => {
+  console.log('get cats');
   dispatch(fetchCatRequest());
   axios.get(`${API_BASE_URL}/api/cats`)
     .then(({ data }) => {

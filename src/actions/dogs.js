@@ -9,7 +9,7 @@ export const fetchDogRequest = () => ({
 export const FETCH_DOG_SUCCESS = 'FETCH_DOG_SUCCESS'
 export const fetchDogSuccess = (dog) => ({
   type: FETCH_DOG_SUCCESS,
-  dog: dog
+  dog
 });
 
 export const FETCH_DOG_ERROR = 'FETCH_DOG_ERROR';
@@ -22,13 +22,14 @@ export const fetchDog = () => dispatch => {
   dispatch(fetchDogRequest());
   axios.get(`${API_BASE_URL}/api/dogs`)
     .then(({ data }) => {
+      console.log('get dogs');
       console.log(data);
       dispatch(fetchDogSuccess(data));
     })
     .catch(error => dispatch(fetchDogError(error)));
 }
 
-export const deleteDOG = () => dispatch => {
+export const deleteDog = () => dispatch => {
   axios.delete(`${API_BASE_URL}/api/dogs`)
     .then(response => {
       dispatch(fetchDog());
