@@ -5,7 +5,11 @@ class App extends Component {
   render() {
     return (
       <body className = "body">
+        <table className="petTable">
+          <row>
 
+          </row>
+        </table>
       </body>
     );
   }
