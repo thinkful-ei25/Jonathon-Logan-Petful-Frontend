@@ -31,9 +31,10 @@ class Dashboard extends React.Component {
             <option>Dogs and Cats</option>
           </select>
         </div>
-        <table className="petTable">
+        <table className="petTable shadow">
           <tbody>
             <tr className="petRow">
+              <td className="gap"></td>
               <td className="petImage">
                 <img className="image" src={dog.imageURL}></img>
               </td>
