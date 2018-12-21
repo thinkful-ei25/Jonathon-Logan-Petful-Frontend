@@ -12,27 +12,28 @@
 }
 
 .petTable{
-  width: 100%;
-  border: 1px solid black;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .petRow{
-  width: 90%;
+  width: 100%;
 }
 
 .petImage{
   width: 30%;
 }
 
+.shadow{
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
 .petDescription{
   position: relative;
   text-align: center;
   width: 20%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
   vertical-align: top;
-}
-
-.petDescriptCat{
-  width: 25%;
 }
 
 .adoptMe{
@@ -71,8 +72,4 @@
 .image{
   width: 100%;
   height: auto;
-}
-
-.gap{
-  width: 5%;
 }
