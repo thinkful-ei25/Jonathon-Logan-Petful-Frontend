@@ -10,7 +10,7 @@ const initialState = {
 const catReducer = (state = initialState, action) => {
   if (action.type === FETCH_CAT_SUCCESS) {
     return Object.assign({}, state, {
-      cat: action.cat,
+      data: action.cat,
       loading: false,
       error: null
     });

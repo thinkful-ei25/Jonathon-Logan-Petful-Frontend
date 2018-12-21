@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
     this.props.dispatch(fetchDog());
   }
   render() {
-    console.log(this.props.cat);
+    console.log(this.props.dog);
 
     return (
       <div className="body">

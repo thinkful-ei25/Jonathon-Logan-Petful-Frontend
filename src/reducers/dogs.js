@@ -13,7 +13,7 @@ const initialState = {
 const dogReducer = (state = initialState, action) => {
   if (action.type === FETCH_DOG_SUCCESS) {
     return Object.assign({}, state, {
-      dog: action.data,
+      data: action.dog,
       loading: false,
       error: null
     });
