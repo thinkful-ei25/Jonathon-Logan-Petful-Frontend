@@ -20,10 +20,13 @@ class Dashboard extends React.Component {
     // console.log('--------------');
     // console.log(this.props.dog);
     // console.log(this.props.cat);
-    const dog = this.props.dog || '';
-    const cat = this.props.cat || '';
+    let dog = this.props.dog || '';
+    let cat = this.props.cat || '';
+    if(dog === 'No more dogs') dog = {imageURL: 'https://cdn.shopify.com/s/files/1/0396/9165/articles/we-are-sold-out_2048x.jpg?v=1495833523'};
+    if(cat === 'No more cats') cat = {imageURL: 'http://www.kittenswhiskers.com/wp-content/uploads/sites/23/2016/12/cats-sold-out.jpg'}
     // console.log('--------------');
     // console.log(dog);
+    console.log('test ' + this.props.dog);
 
     return (
       <div className="body">
