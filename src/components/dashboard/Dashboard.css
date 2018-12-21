@@ -12,13 +12,12 @@
 }
 
 .petTable{
-  width: 80%;
-  margin-left: 10%;
+  width: 100%;
   border: 1px solid black;
 }
 
 .petRow{
-  width: 100%;
+  width: 90%;
 }
 
 .petImage{
@@ -29,8 +28,11 @@
   position: relative;
   text-align: center;
   width: 20%;
-  border: 1px solid black;
   vertical-align: top;
+}
+
+.petDescriptCat{
+  width: 25%;
 }
 
 .adoptMe{
@@ -38,6 +40,13 @@
   position: absolute;
   right: 35%;
   bottom: 5%;
+}
+
+.story{
+  position: absolute;
+  width: 60%;
+  right: 20%;
+  bottom: 8%;
 }
 
 .navBar{
@@ -60,5 +69,10 @@
 }
 
 .image{
-  width: auto;
+  width: 100%;
+  height: auto;
+}
+
+.gap{
+  width: 5%;
 }

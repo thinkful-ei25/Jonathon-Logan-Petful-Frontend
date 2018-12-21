@@ -10,7 +10,13 @@ class Dashboard extends React.Component {
     this.props.dispatch(fetchDog());
   }
   render() {
+    console.log('--------------');
     console.log(this.props.dog);
+    console.log(this.props.cat);
+    const dog = this.props.dog || '';
+    const cat = this.props.cat || '';
+    console.log('--------------');
+    console.log(dog);
 
     return (
       <div className="body">
@@ -27,28 +33,28 @@ class Dashboard extends React.Component {
         </div>
         <table className="petTable">
           <tbody>
-            <tr>
-              {
-                [1].map(function (i) {
-                  return (
-                    <div>
-                      <td className="petImage">
-                        <img className="image" src="https://img.buzzfeed.com/buzzfeed-static/static/2015-04/23/17/enhanced/webdr15/enhanced-6210-1429824367-3.jpg?downsize=700:*&output-format=auto&output-quality=auto"></img>
-                      </td>
-                      <td className="petDescription">
-                        <h2 className="header">Testing</h2>
-                        <p>Lorem Ipsum Description Text awodihaowie awdeijaw d wad wad wa dwa d awd w</p>
-                        <button className="adoptMe">Adopt Me!</button>
-                      </td>
-                      <td className="petImage">
-                        <img className="image" src="https://img.buzzfeed.com/buzzfeed-static/static/2015-04/23/17/enhanced/webdr15/enhanced-6210-1429824367-3.jpg?downsize=700:*&output-format=auto&output-quality=auto"></img>
-                      </td>
-                      <td className="petDescription">
-                      </td>
-                    </div>
-                  )
-                })
-              }
+            <tr className="petRow">
+              <td className="petImage">
+                <img className="image" src={dog.imageURL}></img>
+              </td>
+              <td className="petDescription right">
+                <h2 className="header">{dog.name}</h2>
+                <h3 className="header">Age: {dog.age}, Sex: {dog.sex}, Breed: {dog.breed}</h3>
+                <p>{dog.description}</p>
+                <p className="story">Story: {dog.story}</p>
+                <button className="adoptMe">Adopt Me!</button>
+              </td>
+              <td className="gap"></td>
+              <td className="petImage">
+                <img className="image" src={cat.imageURL}></img>
+              </td>
+              <td className="petDescription petDescriptCat">
+                <h2 className="header">{cat.name}</h2>
+                <h3 className="header">Age: {cat.age}, Sex: {cat.sex}, Breed: {cat.breed}</h3>
+                <p>{cat.description}</p>
+                <p className="story">Story: {cat.story}</p>
+                <button className="adoptMe">Adopt Me!</button>
+              </td>
             </tr>
           </tbody>
         </table>

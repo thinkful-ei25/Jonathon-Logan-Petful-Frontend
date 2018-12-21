@@ -22,8 +22,6 @@ export const fetchDog = () => dispatch => {
   dispatch(fetchDogRequest());
   axios.get(`${API_BASE_URL}/api/dogs`)
     .then(({ data }) => {
-      console.log('get dogs');
-      console.log(data);
       dispatch(fetchDogSuccess(data));
     })
     .catch(error => dispatch(fetchDogError(error)));

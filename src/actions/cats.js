@@ -9,7 +9,7 @@ export const fetchCatRequest = () => ({
 export const FETCH_CAT_SUCCESS = 'FETCH_CAT_SUCCESS'
 export const fetchCatSuccess = (cat) => ({
   type: FETCH_CAT_SUCCESS,
-  cats: cat
+  cat: cat
 });
 
 export const FETCH_CAT_ERROR = 'FETCH_CAT_ERROR';
@@ -19,11 +19,9 @@ export const fetchCatError = (error) => ({
 });
 
 export const fetchCat = () => dispatch => {
-  console.log('get cats');
   dispatch(fetchCatRequest());
   axios.get(`${API_BASE_URL}/api/cats`)
     .then(({ data }) => {
-      console.log(data);
       dispatch(fetchCatSuccess(data));
     })
     .catch(error => dispatch(fetchCatError(error)));
