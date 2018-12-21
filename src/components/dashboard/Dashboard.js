@@ -9,14 +9,21 @@ class Dashboard extends React.Component {
     this.props.dispatch(fetchCat());
     this.props.dispatch(fetchDog());
   }
+  adoptDog() {
+    this.props.dispatch(deleteDog());
+  }
+  adoptCat() {
+    this.props.dispatch(deleteCat());
+
+  }
   render() {
-    console.log('--------------');
-    console.log(this.props.dog);
-    console.log(this.props.cat);
+    // console.log('--------------');
+    // console.log(this.props.dog);
+    // console.log(this.props.cat);
     const dog = this.props.dog || '';
     const cat = this.props.cat || '';
-    console.log('--------------');
-    console.log(dog);
+    // console.log('--------------');
+    // console.log(dog);
 
     return (
       <div className="body">
@@ -42,7 +49,7 @@ class Dashboard extends React.Component {
                 <h3 className="header">Age: {dog.age}, Sex: {dog.sex}, Breed: {dog.breed}</h3>
                 <p>{dog.description}</p>
                 <p className="story">Story: {dog.story}</p>
-                <button className="adoptMe">Adopt Me!</button>
+                <button className="adoptMe" onClick={() => this.adoptDog()}>Adopt Me!</button>
               </td>
               <td className="gap"></td>
               <td className="petImage">
@@ -53,12 +60,12 @@ class Dashboard extends React.Component {
                 <h3 className="header">Age: {cat.age}, Sex: {cat.sex}, Breed: {cat.breed}</h3>
                 <p>{cat.description}</p>
                 <p className="story">Story: {cat.story}</p>
-                <button className="adoptMe">Adopt Me!</button>
+                <button className="adoptMe" onClick={() => this.adoptCat()}>Adopt Me!</button>
               </td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </div >
     );
   }
 }
